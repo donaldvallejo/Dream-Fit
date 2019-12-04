@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} To-Do List {% endblock %}
+
+{% block content %}
+
+{% if all_items %}
+<ul>
+    {% for things in all_items %}
+        <li>{{ things.item }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}
