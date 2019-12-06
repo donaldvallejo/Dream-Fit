@@ -1,0 +1,3 @@
+make lists of items 
+have a cell for prices
+dummy checkout button that takes you to a page for total of prices and list of items.

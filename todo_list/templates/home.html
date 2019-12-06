@@ -28,6 +28,8 @@
         {% else %}
             <tr>
                 <td><a href="{% url 'edit' things.id %}">{{ things.item }}</a></td>
+                <!-- <td><a href="{% url 'edit' things.id %}">${{ things.item }}</a></td>
+                <td><a href="{% url 'edit' things.id %}">Quantity{{ things.item }}</a></td> -->
                 <td><center><a href="{% url 'cross_off' things.id %}">Cross Off</a></center></td>
                 <td><center> Cross Off </center></td>
                 <td><center><a href="{% url 'delete' things.id %}">Delete</a></center></td>
@@ -35,6 +37,9 @@
         {% endif %}
     {% endfor %}
 </table>
+
+<button>Checkout</button>
+
 {% endif %}
 
 {% endblock %}

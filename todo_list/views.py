@@ -42,6 +42,7 @@ def uncross_off(request, list_id):
     item.save()
     return redirect('home')
 
+
 def edit(request, list_id):
     if request.method == 'POST':
         item = List.objects.get(pk=list_id)
