@@ -25,7 +25,7 @@ SECRET_KEY = '$by7#v2!d3h)55q4%9d^+wccs%h@!0eoo8&i^#3rae*1_t8+z('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'dreamfit2.herokuapp.com']
 
 
 # Application definition
@@ -119,6 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

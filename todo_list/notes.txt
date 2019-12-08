@@ -1,3 +1,16 @@
+https://dreamfit2.herokuapp.com/ | https://git.heroku.com/dreamfit2.git
+
 make lists of items 
 have a cell for prices
 dummy checkout button that takes you to a page for total of prices and list of items.
+    make a new page for the form 
+    make cell for prices in table
+    make logic for forms 
+        models
+        views
+        templates 
+
+    qunatity 
+    prices
+    
+        

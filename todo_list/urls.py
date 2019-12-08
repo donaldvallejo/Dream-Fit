@@ -8,5 +8,4 @@ urlpatterns = [
     path('cross_off/,<list_id>', views.cross_off, name='cross_off'),
     path('uncross_off/,<list_id>', views.uncross_off, name='uncross_off'),
     path('edit/,<list_id>', views.edit, name='edit'),
-    # path('form/,<list_id>', views.form, name='form'),
 ]

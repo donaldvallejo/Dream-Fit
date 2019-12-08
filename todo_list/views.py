@@ -15,14 +15,24 @@ def home(request):
             all_items = List.objects.all
             messages.success(request, ('Item has Been Added To List'))
             return render(request, 'home.html', {'all_items': all_items})
-            
+               
     else:
         all_items = List.objects.all
         return render(request, 'home.html', {'all_items': all_items})
 
 def about(request):
-    context = {'first_name': 'John', 'last_name': 'Elder'}
-    return render(request, 'about.html', context)
+    # context = {'first_name': 'John', 'last_name': 'Elder'}
+    return render(request, 'about.html') # , context
+
+# def price(request, list_id):
+#     item = List.objects.get(pk=list_id)
+#     item.save()
+#     return redirect('home')
+
+# def quantity(request, list_id):
+#     item = List.objects.get(pk=list_id)
+#     item.save()
+#     return redirect('home')
 
 def delete(request, list_id):
     item = List.objects.get(pk=list_id)
@@ -42,18 +52,24 @@ def uncross_off(request, list_id):
     item.save()
     return redirect('home')
 
-
 def edit(request, list_id):
     if request.method == 'POST':
         item = List.objects.get(pk=list_id)
-
+        # price = List.objects.get(pk=list_id)
+        # quantity = List.objects.get(pk=list_id)
         form = ListForm(request.POST or None, instance=item)
 
         if form.is_valid():
             form.save()
             messages.success(request, ('Item has Been Edited'))
-            return redirect('home')            
+            return redirect('home')       
+
+        else:   
+            return render(request, 'edit.html', {'item': item} )
+                 
             
     else:
         item = List.objects.get(pk=list_id)
-        return render(request, 'edit.html', {'item': item})
+        # price = List.objects.get(pk=list_id)
+        # quantity = List.objects.get(pk=list_id)
+        return render(request, 'edit.html', {'item': item} ) #, {'item': price}, {'item': quantity}

@@ -1,3 +1,7 @@
 .striker {
     text-decoration: line-through;
 }
+
+input {
+    margin-top: 10px !important;
+}
