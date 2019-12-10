@@ -3,7 +3,15 @@ from .models import List
 from .forms import ListForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
+
+class SignUpView(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
 
 def home(request):
 
@@ -21,18 +29,8 @@ def home(request):
         return render(request, 'home.html', {'all_items': all_items})
 
 def about(request):
-    # context = {'first_name': 'John', 'last_name': 'Elder'}
     return render(request, 'about.html') # , context
 
-# def price(request, list_id):
-#     item = List.objects.get(pk=list_id)
-#     item.save()
-#     return redirect('home')
-
-# def quantity(request, list_id):
-#     item = List.objects.get(pk=list_id)
-#     item.save()
-#     return redirect('home')
 
 def delete(request, list_id):
     item = List.objects.get(pk=list_id)
@@ -55,8 +53,6 @@ def uncross_off(request, list_id):
 def edit(request, list_id):
     if request.method == 'POST':
         item = List.objects.get(pk=list_id)
-        # price = List.objects.get(pk=list_id)
-        # quantity = List.objects.get(pk=list_id)
         form = ListForm(request.POST or None, instance=item)
 
         if form.is_valid():
@@ -70,6 +66,4 @@ def edit(request, list_id):
             
     else:
         item = List.objects.get(pk=list_id)
-        # price = List.objects.get(pk=list_id)
-        # quantity = List.objects.get(pk=list_id)
         return render(request, 'edit.html', {'item': item} ) #, {'item': price}, {'item': quantity}
