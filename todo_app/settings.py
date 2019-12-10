@@ -25,7 +25,7 @@ SECRET_KEY = '$by7#v2!d3h)55q4%9d^+wccs%h@!0eoo8&i^#3rae*1_t8+z('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'dreamfit2.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'dreamfit2.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
