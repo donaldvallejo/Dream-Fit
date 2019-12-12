@@ -1,5 +1,5 @@
 from django.urls import path
-from wiki.views import SignUpView
+from todo_list.views import SignUpView
 from django.conf import settings
 from django.conf.urls.static import static
 
